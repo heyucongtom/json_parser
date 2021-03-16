@@ -6,22 +6,11 @@ tokens = [
     "DIGITS",
     "CHAR",
     "NEWLINE",
-    "QUOTE",
-    "LBRACKET",
-    "RBRACKET"
 ]
 
 def t_DIGITS(t): 
     r'\d+'
     t.value = int(t.value)
-    return t
-
-def t_LBRACKET(t):
-    r'{'
-    return t
-
-def t_RBRACKET(t):
-    r'}'
     return t
 
 def t_CHAR(t):
@@ -31,10 +20,6 @@ def t_CHAR(t):
 def t_NEWLINE(t):
     r'\n+|(\r\n)+'
     t.lexer.lineno = len(t.value)
-
-def t_QUOTE(t):
-    r'"'
-    return t
 
 
 
